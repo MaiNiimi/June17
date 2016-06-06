@@ -38,9 +38,9 @@ public class AddServlet extends HttpServlet {
 		 * try{ manager.makePersistent(data); }finally{ manager.close(); }
 		 */
 		PrintWriter out = resp.getWriter();
-		String res = name + "さん、" + className + "を登録しました！";
+		String res = req.getUserPrincipal().getName()  + "さん、" + className + "を登録しました！";
 		out.println(res);
-		//resp.sendRedirect("/main.jsp");
+		out.println("<p><a href=\"main.jsp\">メニューへ</a></p>");
 	}
 
 	@Override

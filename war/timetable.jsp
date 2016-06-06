@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title>履修登録</title>
+<title>時間割表示</title>
 <script type="text/javascript" src="lib.js"></script>
 <script type="text/javascript">
         function callback(request){
