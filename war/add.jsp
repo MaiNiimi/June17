@@ -24,6 +24,7 @@
             var msg = '<table border="1"><tr><td>' + data.className + '</td></tr>';
             msg += '<tr><td>' + data.teacher + '</td></tr>';
             msg += '<tr><td>' + data.explanation + '</td></tr></table>';
+            //所定の値のid属性を持つエレメントを返す
             document.getElementById("data").innerHTML = msg;
             document.getElementById("name").value = data.className;
         }
@@ -38,5 +39,5 @@
             <input type="hidden" id="name" name="name">
             <input type="submit" value="登録">
         </form>
-        </body>
+    </body>
 </html>

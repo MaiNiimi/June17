@@ -49,4 +49,13 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>add</servlet-name>
 		<url-pattern>/add</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>timetable</servlet-name>
+		<servlet-class>risyu_ms.TimetableServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>timetable</servlet-name>
+		<url-pattern>/timetable</url-pattern>
+	</servlet-mapping>
 </web-app>
