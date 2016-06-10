@@ -5,7 +5,7 @@ import java.io.IOException;
 import javax.jdo.*;
 import javax.servlet.http.*;
 
-import risyu_ms.Lesson2;
+import risyu_ms.Lesson3;
 import risyu_ms.PMF2;
 
 import java.io.PrintWriter;
@@ -25,18 +25,25 @@ public class AddServlet extends HttpServlet {
 
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        /*req.setCharacterEncoding("UTF-8");
+        req.setCharacterEncoding("UTF-8");
+        resp.setCharacterEncoding("UTF-8");
+		resp.setContentType("text/html");
+		req.setCharacterEncoding("utf-8");
+        
         String className = req.getParameter("className");
         String teacher = req.getParameter("teacher");
+        /*
         String term = req.getParameter("term");
         String week = req.getParameter("week");
         String periodS = req.getParameter("period");
         int period = Integer.parseInt(periodS);
         String creditS= req.getParameter("credit");
         int credit = Integer.parseInt(creditS);
+        */
 
         String explanation = req.getParameter("explanation");
-        Lesson2 lesson2 = new Lesson2(className,teacher,term,week,period,credit,explanation);
+        Lesson3 lesson3 = new Lesson3(className,teacher,explanation);
+        /*
         PersistenceManagerFactory factory = PMF2.get();
         PersistenceManager manager = factory.getPersistenceManager();
         try {
@@ -44,20 +51,23 @@ public class AddServlet extends HttpServlet {
         } finally {
             manager.close();
         }*/
-		resp.setCharacterEncoding("UTF-8");
-		resp.setContentType("text/html");
-		req.setCharacterEncoding("utf-8");
+		
+		
+		
+		/*
 		String className = req.getParameter("name");
 		String name = "umeko";
 		ServletContext application = this.getServletContext();
 		application.setAttribute("name", name);
 		application.setAttribute("className", className);
+		*/
 		
 		// Student data = new Student(name,id);
 		//try{ manager.makePersistent(data); }finally{ manager.close(); }
 		
 		PersistenceManagerFactory factory = PMF2.get();
 		PersistenceManager manager = factory.getPersistenceManager();
+		/*
 		String param1 = req.getParameter("id");
 		List<Lesson> list = null;
 		if (param1 == null || param1 ==""){
@@ -72,6 +82,7 @@ public class AddServlet extends HttpServlet {
                 list.add(data);
             } catch(JDOObjectNotFoundException e){}
         }
+        
         String res = "[";
         if (list != null){
             for(Lesson data : list){
@@ -83,8 +94,12 @@ public class AddServlet extends HttpServlet {
             
         }
         res += "]";
-        //manager.makePersistent(list);
-        manager.close();
+        */
+        try {
+        manager.makePersistent(lesson3);
+        } finally {
+        	manager.close();
+        }
 		//
 		//出力する
 		PrintWriter out = resp.getWriter();

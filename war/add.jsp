@@ -35,8 +35,10 @@
         <h1>授業を登録</h1>
         <div>以下のデータを登録しますか？</div>
         <div id="data"></div>
-        <form method="post" action="add">
+        <form method="post" action="register">
             <input type="hidden" id="name" name="name">
+            <input type="hidden" id="teacher" name="teacher">
+            <input type="hidden" id="explanation" name="explanation">
             <input type="submit" value="登録">
         </form>
     </body>
