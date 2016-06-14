@@ -20,10 +20,10 @@
                 res += '<tr><td>' + json[0].explanation +'</td></tr>';
             } else {
                 for (var i = 0;i < json.length;i++){
-                	res += '<tr><td><a href="javascript:return false;" onclick="getData2(' + json[i].id +');">' + json[i].id + '</a></td>';
+                	res += '<tr><td><a href="javascript:return false;" onclick="getData(' + json[i].id +');">' + json[i].id + '</a></td>';
                     res += '<td>' + json[i].className + '</td>' +
                     '<td>' + json[i].teacher+' </td>' +
-                    '<td>' + json[i].explanation +'</td>'</tr>'
+                    '<td>' + json[i].explanation +'</td></tr>';
                 }
             }
             var obj = document.getElementById("datatable");
@@ -31,7 +31,7 @@
         }
         </script>
 </head>
-	<body onload="getData2(null);">
+	<body onload="getData(null);">
 		<h1>あなたの時間割</h1>
 
 	<br>

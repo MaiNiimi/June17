@@ -4,6 +4,13 @@ import com.google.api.server.spi.auth.common.*;
 import com.google.appengine.api.users.UserService;
 import com.google.appengine.api.users.UserServiceFactory;
 
+import java.security.Principal;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+ 
+import com.google.appengine.api.users.*;
+
 import java.io.IOException;
 
 import javax.servlet.http.HttpServlet;
@@ -22,9 +29,16 @@ public class UsersServlet extends HttpServlet {
 		resp.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/html");
 		
+		UserService service = UserServiceFactory.getUserService();
 		HttpSession session = req.getSession();
-		User user = (User)session.getAttribute("user");
+		//User user = (User)session.getAttribute("user");
 		//String name = user.getEmail();
+	
+		 if (service.isUserLoggedIn()){
+	            session.setAttribute("user", service.getCurrentUser());
+	        } else {
+	            session.removeAttribute("user");
+	        }
 		
 		if (req.getUserPrincipal() != null) {
 			//resp.getWriter().println("<p>" + name + "さん、ログイン中… You can <a href=\""

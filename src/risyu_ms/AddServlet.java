@@ -5,8 +5,10 @@ import java.io.IOException;
 import javax.jdo.*;
 import javax.servlet.http.*;
 
-import risyu_ms.Lesson3;
-import risyu_ms.PMF2;
+import com.google.api.server.spi.auth.common.User;
+
+import risyu_ms.Lesson;
+import risyu_ms.PMF;
 
 import java.io.PrintWriter;
 import java.util.*;
@@ -29,80 +31,42 @@ public class AddServlet extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/html");
 		req.setCharacterEncoding("utf-8");
+		
+		PrintWriter out = resp.getWriter();
         
-        String className = req.getParameter("className");
-        String teacher = req.getParameter("teacher");
+        String className = req.getParameter("name");
+        //out.println(className);
+        
         /*
+        String teacher = req.getParameter("teacher");        
         String term = req.getParameter("term");
         String week = req.getParameter("week");
         String periodS = req.getParameter("period");
         int period = Integer.parseInt(periodS);
         String creditS= req.getParameter("credit");
         int credit = Integer.parseInt(creditS);
-        */
 
-        String explanation = req.getParameter("explanation");
-        Lesson3 lesson3 = new Lesson3(className,teacher,explanation);
-        /*
-        PersistenceManagerFactory factory = PMF2.get();
-        PersistenceManager manager = factory.getPersistenceManager();
-        try {
-            manager.makePersistent(lesson2);
-        } finally {
-            manager.close();
-        }*/
-		
-		
-		
-		/*
-		String className = req.getParameter("name");
-		String name = "umeko";
-		ServletContext application = this.getServletContext();
-		application.setAttribute("name", name);
-		application.setAttribute("className", className);
-		*/
-		
-		// Student data = new Student(name,id);
-		//try{ manager.makePersistent(data); }finally{ manager.close(); }
-		
-		PersistenceManagerFactory factory = PMF2.get();
-		PersistenceManager manager = factory.getPersistenceManager();
-		/*
-		String param1 = req.getParameter("id");
-		List<Lesson> list = null;
-		if (param1 == null || param1 ==""){
-            String query = "select from " + Lesson2.class.getName();
-            try {
-                list = (List<Lesson>)manager.newQuery(query).execute();
-            } catch(JDOObjectNotFoundException e){}
-        } else {
-            try {
-                Lesson data = (Lesson)manager.getObjectById(Lesson.class,Long.parseLong(param1));
-                list = new ArrayList();
-                list.add(data);
-            } catch(JDOObjectNotFoundException e){}
-        }
+        HttpSession session = req.getSession();
+        User user = (User)session.getAttribute("user");
+        String student = user.getEmail();
         
-        String res = "[";
-        if (list != null){
-            for(Lesson data : list){
-				res += "{id:" + data.getId() + ",className:'" + data.getClassName() + "',teacher:'"
-						+ data.getTeacher() + "',period:'" + data.getPeriod() + "',credit:'" + data.getCredit()
-						+ "',teacher:'" + data.getTeacher() + "',term:'" + data.getTerm() + "',explanation:'"
-						+ data.getExplanation() + "',week:'" + data.getWeek() + "'},";
-            }
-            
-        }
-        res += "]";
-        */
+        String explanation = req.getParameter("explanation");
+        Lesson lesson = new Lesson(className, teacher, term, week, period, credit,
+    			  explanation, student);
+  
+		PersistenceManagerFactory factory = PMF.get();
+		PersistenceManager manager = factory.getPersistenceManager();
+		 
+
         try {
-        manager.makePersistent(lesson3);
+        manager.makePersistent(lesson);
         } finally {
         	manager.close();
         }
-		//
+        */
+		
 		//出力する
-		PrintWriter out = resp.getWriter();
+
 		String res2 = req.getUserPrincipal().getName()  + "さん、" + className + "を登録しました！";
 		out.println(res2);
 		out.println("<p><a href=\"main.jsp\">メニューへ</a></p>");

@@ -30,24 +30,6 @@ function getData(id){
     }
     request.send();
 }
-function getData2(id){
-    var request = createHttpRequest();
-    if (request == null){
-        alert("HttpRequestが取得できませんでした。");
-        return;
-    }
-    var uri = "/register";
-    if (id != null) uri = "/register?id=" + id;
-    request.open("GET",uri,true);
-    request.setRequestHeader("User-Agent","XMLHttpRequest");
-    request.onreadystatechange = function(){
-        if (request.readyState == 4 && request.status == 200){
-            callback(request);
-        }
-    }
-    request.send();
-}
- 
 function getQuery(){
     var datas = new Array();
     var query = location.search.substring(1);

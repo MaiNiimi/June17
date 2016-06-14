@@ -4,6 +4,8 @@ xmlns="http://java.sun.com/xml/ns/javaee"
 xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	
+	
 	<servlet>
 		<servlet-name>Risyu_ms</servlet-name>
 		<servlet-class>risyu_ms.Risyu_msServlet</servlet-class>
@@ -58,22 +60,8 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>timetable</servlet-name>
 		<url-pattern>/timetable</url-pattern>
 	</servlet-mapping>
-	
-	<servlet>
-		<servlet-name>register</servlet-name>
-		<servlet-class>risyu_ms.RegisterServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>register</servlet-name>
-		<url-pattern>/register</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
-		<servlet-name>my</servlet-name>
-		<servlet-class>risyu_ms.MyServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>my</servlet-name>
-		<url-pattern>/my</url-pattern>
-	</servlet-mapping>
+
+
+
 </web-app>
+

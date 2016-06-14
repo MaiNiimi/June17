@@ -1,10 +1,3 @@
-<%-- 
-    Document   : search
-    Created on : 2015/12/16, 16:38:13
-    Author     : g14911ih
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
@@ -26,7 +19,7 @@
             msg += '<tr><td>' + data.explanation + '</td></tr></table>';
             //所定の値のid属性を持つエレメントを返す
             document.getElementById("data").innerHTML = msg;
-            document.getElementById("name").value = data.className;
+           
         }
         //-->
         </script>
@@ -35,10 +28,20 @@
         <h1>授業を登録</h1>
         <div>以下のデータを登録しますか？</div>
         <div id="data"></div>
-        <form method="post" action="register">
-            <input type="hidden" id="name" name="name">
-            <input type="hidden" id="teacher" name="teacher">
-            <input type="hidden" id="explanation" name="explanation">
+        <form method="post" action="/add">
+        	<!-- type="hidden"で非表示データを送信する、nameでフォーム部品に名前をつける、valueで送信される値を指定する -->
+        	<!-- つまり、現時点、名前はつけたけど中身を入れてない！！そりゃnullになるわけだ！！ -->
+        	<input type="hidden"  name="id">
+            <input type="hidden" name="name" id="name" value="">
+            <script type="text/javascript"><!--
+			document.getElementById('name').value=datas.className;
+			//--></script>
+            <input type="hidden" name="teacher">
+            <input type="hidden" name="term">
+            <input type="hidden" name="week">
+            <input type="hidden" name="period">
+            <input type="hidden" name="credit">
+            <input type="hidden" name="explanation">
             <input type="submit" value="登録">
         </form>
     </body>

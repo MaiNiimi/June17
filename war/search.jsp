@@ -27,7 +27,7 @@
                     '<td>' + json[i].week+ json[i].period+' </td>' +
                     '<td>' + json[i].credit+' </td>' +
                     '<td>' + json[i].explanation +'</td>'+
-                    '<td><a href ="add.jsp?id='+json[i].id + '">登録</a></td></tr>'
+                    '<td><a href ="add.html?id='+json[i].id + '">登録</a></td></tr>'
                 }
             }
             var obj = document.getElementById("datatable");

@@ -29,9 +29,11 @@ public class Lesson {
 	private int period;
     @Persistent
     private int credit;
+	@Persistent
+	private String student;
 
 	public Lesson(String className, String teacher, String term, String week, int period, int credit,
-			String explanation) {
+			String explanation, String student) {
 		super();
 		this.className = className;
 		this.teacher = teacher;
@@ -40,6 +42,7 @@ public class Lesson {
 		this.period = period;
 		this.explanation = explanation;
 		this.credit = credit;
+		this.student = student;
 	}
 	public Long getId(){
 		return id;
@@ -117,5 +120,16 @@ public class Lesson {
 	public void setCredit(int credit){
 		this.credit = credit;
 	}
+	public String getStudent() {
+		if (student == null) {
+			student = " ";
+		}
+		return student;
+	}
+	
+	public void setStudent(String student){
+		this.student = student;
+	}
 }
+
 
