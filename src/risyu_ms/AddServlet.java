@@ -33,8 +33,25 @@ public class AddServlet extends HttpServlet {
 		req.setCharacterEncoding("utf-8");
 		
 		PrintWriter out = resp.getWriter();
-        
-        String className = req.getParameter("name");
+		String id = req.getParameter("id");
+        String className = req.getParameter("className");
+        String teacher = req.getParameter("teacher");
+        String term = req.getParameter("term");
+        String week = req.getParameter("week");
+        String periodS = req.getParameter("period");
+        int period = Integer.parseInt(periodS);
+        String creditS = req.getParameter("credit");
+        int credit = Integer.parseInt(creditS);
+        String explanation = req.getParameter("explanation");
+        String student = req.getUserPrincipal().getName();
+        Lesson data = new Lesson(className,teacher, term, week,period, credit, explanation, student);
+        PersistenceManagerFactory factory = PMF.get();
+        PersistenceManager manager = factory.getPersistenceManager();
+        try {
+            manager.makePersistent(data);
+        } finally {
+            manager.close();
+        }
         //out.println(className);
         
         /*

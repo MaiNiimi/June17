@@ -11,7 +11,8 @@
 <title>時間割表示</title>
 <script type="text/javascript" src="lib.js"></script>
 <script type="text/javascript">
-        function callback(request){
+		<!--
+		function callback(request){
             var json = eval(request.responseText);
             var res = '';
             if (json.length == 1){
@@ -23,7 +24,11 @@
                 	res += '<tr><td><a href="javascript:return false;" onclick="getData(' + json[i].id +');">' + json[i].id + '</a></td>';
                     res += '<td>' + json[i].className + '</td>' +
                     '<td>' + json[i].teacher+' </td>' +
-                    '<td>' + json[i].explanation +'</td></tr>';
+                    '<td>' + json[i].term+' </td>' +
+                    '<td>' + json[i].week+ json[i].period+' </td>' +
+                    '<td>' + json[i].credit+' </td>' +
+                    '<td>' + json[i].explanation +'</td>'+
+                    '<td><a href ="add.html?id='+json[i].id + '">登録</a></td></tr>'
                 }
             }
             var obj = document.getElementById("datatable");
@@ -31,13 +36,14 @@
         }
         </script>
 </head>
-	<body onload="getData(null);">
+	<body onload="findData">
 		<h1>あなたの時間割</h1>
 
 	<br>
 	<a href="main.jsp">メニューへ</a>
 	<br>
 	<br>
+	<jsp:include page="/risyu_ms.TimetableServlet" />
 	<table id="datatable" border="1">
 		<tr>
 			<td>wait...</td>
