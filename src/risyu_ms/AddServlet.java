@@ -52,35 +52,6 @@ public class AddServlet extends HttpServlet {
         } finally {
             manager.close();
         }
-        //out.println(className);
-        
-        /*
-        String teacher = req.getParameter("teacher");        
-        String term = req.getParameter("term");
-        String week = req.getParameter("week");
-        String periodS = req.getParameter("period");
-        int period = Integer.parseInt(periodS);
-        String creditS= req.getParameter("credit");
-        int credit = Integer.parseInt(creditS);
-
-        HttpSession session = req.getSession();
-        User user = (User)session.getAttribute("user");
-        String student = user.getEmail();
-        
-        String explanation = req.getParameter("explanation");
-        Lesson lesson = new Lesson(className, teacher, term, week, period, credit,
-    			  explanation, student);
-  
-		PersistenceManagerFactory factory = PMF.get();
-		PersistenceManager manager = factory.getPersistenceManager();
-		 
-
-        try {
-        manager.makePersistent(lesson);
-        } finally {
-        	manager.close();
-        }
-        */
 		
 		//出力する
 

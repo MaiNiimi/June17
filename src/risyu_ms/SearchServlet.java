@@ -48,7 +48,7 @@ public class SearchServlet extends HttpServlet {
 			for (Lesson data : list) {
 				res += "{id:" + data.getId() + ",className:'" + data.getClassName() + "',teacher:'"
 						+ data.getTeacher() + "',period:'" + data.getPeriod() + "',credit:'" + data.getCredit()
-						+ "',teacher:'" + data.getTeacher() + "',term:'" + data.getTerm() + "',explanation:'"
+						+ "',term:'" + data.getTerm() + "',explanation:'"
 						+ data.getExplanation() + "',week:'" + data.getWeek() + "'},";
 			}
 		}

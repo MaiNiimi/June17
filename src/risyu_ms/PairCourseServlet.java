@@ -35,9 +35,8 @@ public class PairCourseServlet extends HttpServlet {
 		if (list != null) {
 			for (Lesson data : list) {
 				res += "{id:" + data.getId() + ",className:'" + data.getClassName() + "',teacher:'" + data.getTeacher()
-						+ "',period:'" + data.getPeriod() + "',credit:'" + data.getCredit() + "',teacher:'"
-						+ data.getTeacher() + "',term:'" + data.getTerm() + "',explanation:'" + data.getExplanation()
-						+ "',week:'" + data.getWeek() + "'},";
+						+ "',period:'" + data.getPeriod() + "',credit:'" + data.getCredit() + "',term:'" + data.getTerm() + "',explanation:'" + data.getExplanation()
+						+ "',week:'" + data.getWeek() +"',student:'" + data.getStudent()+  "'},";
 			}
 		}
 		res += "]";

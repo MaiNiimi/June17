@@ -26,9 +26,13 @@ public class TimetableServlet extends HttpServlet {
 		PersistenceManager manager = factory.getPersistenceManager();
 		
 		String loginId = req.getUserPrincipal().getName();
-		
-		String query = "select from" +Lesson.class.getName() + "where student ==" + loginId;
-		PrintWriter out = resp.getWriter();
+		//なんか、Portion of expression could not be parsed: @gm.tsuda.ac.jpってエラー出る
+		//String query = "select from " + Lesson.class.getName() + " where request.responseText.student==" + loginId;
+		//これが正しいやつ！全部表示される！
+		String query = "select from " + Lesson.class.getName();// + " where className == " + className;
+		//なんかずっとあるやつ！
+		//String query = "select from" +Lesson.class.getName() + "where student ==" + loginId;
+		//PrintWriter out = resp.getWriter();
 		
 		List<Lesson> list = null;
 		try {
@@ -39,16 +43,17 @@ public class TimetableServlet extends HttpServlet {
 		String res = "[";
 		if (list != null) {
 			for (Lesson data : list) {
-				res += "{id:" + data.getId() + ",className:'" + data.getClassName() + "',teacher:'" + data.getTeacher()
-						+ "',period:'" + "',teacher:'" + data.getTeacher() + "',term:'" + data.getTerm()
-						+ "',explanation:'" + data.getExplanation() + "',week:'" + data.getWeek() + "'},";
+				res += "{id:" + data.getId() + ",className:'" + data.getClassName() + "',teacher:'"
+						+ data.getTeacher() + "',period:'" + data.getPeriod() + "',credit:'" + data.getCredit()
+						+ "',term:'" + data.getTerm() + "',explanation:'"
+						+ data.getExplanation() + "',week:'" + data.getWeek() + "'}";
 			}
 		}
 
 		res += "]";
 		manager.close();
-		out.println(res);
-        //resp.sendRedirect("/timetable.jsp");
+		//out.println(res);
+        resp.sendRedirect("/timetable.jsp");
 	}
 	
 	protected void doPost(HttpServletRequest req,

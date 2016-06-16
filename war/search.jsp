@@ -20,6 +20,7 @@
                 res += '<tr><td>' + json[0].explanation +'</td></tr>';
             } else {
                 for (var i = 0;i < json.length;i++){
+					if(json[i].student===""){
                 	res += '<tr><td><a href="javascript:return false;" onclick="getData(' + json[i].id +');">' + json[i].id + '</a></td>';
                     res += '<td>' + json[i].className + '</td>' +
                     '<td>' + json[i].teacher+' </td>' +
@@ -28,6 +29,7 @@
                     '<td>' + json[i].credit+' </td>' +
                     '<td>' + json[i].explanation +'</td>'+
                     '<td><a href ="add.html?id='+json[i].id + '">登録</a></td></tr>'
+                    }
                 }
             }
             var obj = document.getElementById("datatable");
