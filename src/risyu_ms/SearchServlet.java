@@ -22,6 +22,7 @@ public class SearchServlet extends HttpServlet {
 	// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on
 	// the + sign on the left to edit the code.">
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -34,7 +35,7 @@ public class SearchServlet extends HttpServlet {
 		String teacher = request.getParameter("teacher");
 		String term = request.getParameter("term");
 		String week = request.getParameter("week");
-		String query = "select from " + Lesson.class.getName() + " where className == " + className;
+		String query = "select from " + Lesson.class.getName();// + " where className == " + className;
 		// PrintWriter out = response.getWriter();
 		List<Lesson> list = null;
 		try {

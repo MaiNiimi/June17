@@ -30,7 +30,7 @@ public class Lesson {
     @Persistent
     private int credit;
 	@Persistent
-	private static String student;
+	private String student;
 
 	public Lesson(String className, String teacher, String term, String week, int period, int credit,
 			String explanation, String student) {
@@ -120,7 +120,7 @@ public class Lesson {
 	public void setCredit(int credit){
 		this.credit = credit;
 	}
-	public static String getStudent() {
+	public String getStudent() {
 		if (student == null) {
 			student = " ";
 		}
