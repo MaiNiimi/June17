@@ -8,6 +8,7 @@ import javax.servlet.http.*;
 
 @SuppressWarnings("serial")
 public class PairCourseServlet extends HttpServlet {
+	@SuppressWarnings("unchecked")
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		PersistenceManagerFactory factory = PMF.get();
 		PersistenceManager manager = factory.getPersistenceManager();
@@ -15,6 +16,7 @@ public class PairCourseServlet extends HttpServlet {
 		resp.setContentType("text/html");
 		req.setCharacterEncoding("utf-8");
 		String param1 = req.getParameter("id");
+		String loginId = req.getUserPrincipal().getName();
 		PrintWriter out = resp.getWriter();
 		List<Lesson> list = null;
 		if (param1 == null || param1 == "") {
@@ -36,7 +38,7 @@ public class PairCourseServlet extends HttpServlet {
 			for (Lesson data : list) {
 				res += "{id:" + data.getId() + ",className:'" + data.getClassName() + "',teacher:'" + data.getTeacher()
 						+ "',period:'" + data.getPeriod() + "',credit:'" + data.getCredit() + "',term:'" + data.getTerm() + "',explanation:'" + data.getExplanation()
-						+ "',week:'" + data.getWeek() +"',student:'" + data.getStudent()+  "'},";
+						+ "',week:'" + data.getWeek() +"',student:'" + data.getStudent()+ "',loginId:'" + loginId+ "'},";
 			}
 		}
 		res += "]";

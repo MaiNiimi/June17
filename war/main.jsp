@@ -14,8 +14,14 @@
         <h1>メニュー</h1>
         <ul>
             <li><a href ="search">検索</a></li>
-            <li><a href ="timetable">時間割表示</a></li>
-            <!-- <li><a href ="Logout">ログアウト</a></li>-->
-        </ul>
+            <li><a href ="timetable.jsp">時間割表示</a></li>
+            <form method="post" action="/users">
+         
+            <td>
+                <input type="submit" value="ログアウト">
+            </td>
+
+        </form>
+            </ul>
     </body>
 </html>

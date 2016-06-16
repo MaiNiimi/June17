@@ -21,7 +21,7 @@
                 res += '<tr><td>' + json[0].explanation +'</td></tr>';
             } else {
                 for (var i = 0;i < json.length;i++){
-                	if(json[i].student===){
+                	if(json[i].student===json[i].loginId){
                 		res += '<tr><td><a href="javascript:return false;" onclick="getData(' + json[i].id +');">' + json[i].id + '</a></td>';
                 	    res += '<td>' + json[i].className + '</td>' +
            			    '<td>' + json[i].teacher+' </td>' +
@@ -29,8 +29,7 @@
                     	'<td>' + json[i].week+ json[i].period+' </td>' +
              	        '<td>' + json[i].credit+' </td>' +
                 	    '<td>' + json[i].explanation +'</td></tr>'
-                	    }
-                	    
+                	    }   
                 }               
             }
             var obj = document.getElementById("datatable");
@@ -40,7 +39,6 @@
 </head>
 	<body onload="getData(null);">
 		<h1>あなたの時間割</h1>
-
 	<br>
 	<a href="main.jsp">メニューへ</a>
 	<br>
