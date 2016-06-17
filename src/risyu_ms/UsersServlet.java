@@ -50,9 +50,9 @@ public class UsersServlet extends HttpServlet {
 	        }
 		
 		if (req.getUserPrincipal() != null) {
-					resp.getWriter().println("<p>" + req.getUserPrincipal().getName() + "さん、ログイン中…\n"
-							+ "+<a href=\"" + userService.createLogoutURL(thisUrl) + "\">ログアウトする</a>.</p>");
+			resp.getWriter().println("<p>" + req.getUserPrincipal().getName() + "さん、ログイン中…"+"</p>");
 			resp.getWriter().println("<p><a href=\"main.jsp\">メニューへ</a></p>");
+			resp.getWriter().println("<p><a href=\"" + userService.createLogoutURL(thisUrl) + "\">ログアウトする</a></p>");
 			
 		} else {
 			resp.getWriter()

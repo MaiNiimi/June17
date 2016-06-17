@@ -47,6 +47,7 @@
 	<br>
 	<a href="main.jsp">メニューへ</a>
 	<br>
+	<a href="/search">検索</a>
 	<br>
 	<table id="datatable" border="1">
 		<tr>

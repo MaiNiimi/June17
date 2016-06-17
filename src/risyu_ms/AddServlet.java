@@ -56,7 +56,12 @@ public class AddServlet extends HttpServlet {
 
 		String res2 = req.getUserPrincipal().getName()  + "さん、" + className + "を登録しました！";
 		out.println(res2);
-		out.println("<p><a href=\"main.jsp\">メニューへ</a></p>");
+		out.println("");
+		out.println("<p><a href=\"search\">検索</a></p>");
+		out.println("");
+		out.println("<p><a href=\"timetable.jsp\">自分の時間割表示</a></p>");
+		out.println("");
+		out.println("<p><a href=\"main.jsp\">メニュー</a></p>");
 	}
 
 	@Override
