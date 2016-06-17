@@ -8,6 +8,11 @@
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style>
+            title{font-size: 30pt; font-synthesis:weight; color: magenta;}
+            h1{font-size: 20pt; font-synthesis: weight; color:magenta;}
+            body{background: ivory}
+    </style>
 <title>時間割表示</title>
 <script type="text/javascript" src="lib.js"></script>
 <script type="text/javascript">
