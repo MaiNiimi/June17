@@ -13,7 +13,7 @@
             h1{font-size: 20pt; font-synthesis: weight; color:magenta;}
             body{background: ivory}
     </style>
-<title>時間割表示</title>
+<title>履修登録</title>
 <script type="text/javascript" src="lib.js"></script>
 <script type="text/javascript">
 		<!--
@@ -43,18 +43,19 @@
         </script>
 </head>
 	<body onload="getData(null);">
-		<h1>あなたの時間割</h1>
+		<h1>あなたの登録した科目</h1>
 	<br>
 	<a href="main.jsp">メニューへ</a>
 	<br>
-	<a href="/search">検索</a>
-	<br>
+	<a href="/search">授業を選択する</a>
+	<br><br>
 	<table id="datatable" border="1">
 		<tr>
 			<td>wait...</td>
 		</tr>
 	</table>
 	<br>
+	  <p><img src = 'http://2.bp.blogspot.com/-xe_c9i7r7x4/VyNc2AkGMMI/AAAAAAAA6JA/IjziMtBmazka4StP2TctJ5PQ0YAv2lq5ACLcB/s800/religion_keiji_man.png' width = '200' height = '200' alt = '時間割' align = 'left' border = '0'></p>
 	<div>
 	</div>
 </body>

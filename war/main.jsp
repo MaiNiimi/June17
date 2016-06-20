@@ -18,13 +18,11 @@
     <body>
         <h1>メニュー</h1>
         <ul>     
-            <form method="post" action="/users">
-            	<td>
-                	<input type="submit" value="ログアウト" style="width:100px; height:80px; font-size: 15pt;">
-            	</td>
-        	</form>
-            <li><a href ="search">検索</a></li>
-            <li><a href ="timetable.jsp">時間割表示</a></li>
+            <li><a href ="search">授業を選択する</a></li>
+            <li><a href ="timetable.jsp">自分の登録した科目を見る</a></li>
         </ul>
+        <p><img src = 'http://4.bp.blogspot.com/-9BbIaubUxoI/VD3SXaU6tWI/AAAAAAAAoS8/nsifjIIQf8Y/s800/school_jikanwari_junbi.png' width = '300' height = '300' align = 'left' border = '0'></p>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <p><a href ="logout">ログアウトする</a></p>
     </body>
 </html>

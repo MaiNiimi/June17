@@ -9,14 +9,6 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
 	<servlet>
-		<servlet-name>Users</servlet-name>
-		<servlet-class>risyu_ms.UsersServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Users</servlet-name>
-		<url-pattern>/users</url-pattern>
-	</servlet-mapping>
-	<servlet>
 		<servlet-name>PairCourse</servlet-name>
 		<servlet-class>risyu_ms.PairCourseServlet</servlet-class>
 	</servlet>
@@ -43,6 +35,25 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/add</url-pattern>
 	</servlet-mapping>
 	
+	<filter>
+    	<filter-name>logincheck</filter-name>
+   		<filter-class>risyu_ms.LoginCheckFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+    	<filter-name>logincheck</filter-name>
+   		<url-pattern>/main.jsp</url-pattern>
+	</filter-mapping>    
+     
+	<servlet>
+    	<servlet-name>logout</servlet-name>
+    	<servlet-class>risyu_ms.LogoutServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+    	<servlet-name>logout</servlet-name>
+    	<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
 	
 </web-app>
 

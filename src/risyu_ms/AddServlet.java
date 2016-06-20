@@ -52,16 +52,7 @@ public class AddServlet extends HttpServlet {
         } finally {
             manager.close();
         }
-		//出力する
-
-		String res2 = req.getUserPrincipal().getName()  + "さん、" + className + "を登録しました！";
-		out.println(res2);
-		out.println("");
-		out.println("<p><a href=\"search\">検索</a></p>");
-		out.println("");
-		out.println("<p><a href=\"timetable.jsp\">自分の時間割表示</a></p>");
-		out.println("");
-		out.println("<p><a href=\"main.jsp\">メニュー</a></p>");
+        resp.sendRedirect("search.jsp");
 	}
 
 	@Override

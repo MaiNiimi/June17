@@ -44,10 +44,13 @@
 </head>
 <body onload="getData(null);">
 	<h1>授業を選択する</h1>
-	<br>
+	<p><img src = 'http://4.bp.blogspot.com/-b7y2k5-3YPY/UPzH8PJ65gI/AAAAAAAAKz8/-c9-RIs0iPg/s1600/books.png' width = '130' height = '130' align = 'middle' border = '0'></p>
 	<a href="main.jsp">メニューへ</a>
 	<br>
+	<a href="timetable.jsp">自分の登録した科目を見る</a>
 	<br>
+	<a href="search.jsp">授業を選択する</a>
+	<br><br>
 	<table id="datatable" border="1">
 		<tr>
 			<td>wait...</td>
