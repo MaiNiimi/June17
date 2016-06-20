@@ -31,12 +31,8 @@ public class SearchServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html");
 		request.setCharacterEncoding("utf-8");
-		String className = request.getParameter("className");
-		String teacher = request.getParameter("teacher");
-		String term = request.getParameter("term");
-		String week = request.getParameter("week");
-		String query = "select from " + Lesson.class.getName();// + " where className == " + className;
-		// PrintWriter out = response.getWriter();
+		String query = "select from " + Lesson.class.getName();
+
 		List<Lesson> list = null;
 		try {
 			list = (List<Lesson>) manager.newQuery(query).execute();
@@ -48,7 +44,7 @@ public class SearchServlet extends HttpServlet {
 			for (Lesson data : list) {
 				res += "{id:" + data.getId() + ",className:'" + data.getClassName() + "',teacher:'"
 						+ data.getTeacher() + "',period:'" + data.getPeriod() + "',credit:'" + data.getCredit()
-						+ "',teacher:'" + data.getTeacher() + "',term:'" + data.getTerm() + "',explanation:'"
+						+ "',term:'" + data.getTerm() + "',explanation:'"
 						+ data.getExplanation() + "',week:'" + data.getWeek() + "'},";
 			}
 		}

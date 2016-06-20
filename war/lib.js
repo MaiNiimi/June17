@@ -30,6 +30,7 @@ function getData(id){
     }
     request.send();
 }
+
 function getQuery(){
     var datas = new Array();
     var query = location.search.substring(1);

@@ -2,6 +2,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+            title{font-size: 30pt; font-synthesis:weight; color: magenta;}
+            h1{font-size: 20pt; font-synthesis: weight; color:magenta;}
+            body{background: ivory}
+    </style>
         <title>履修登録</title>
     <script type="text/javascript" src="lib.js"></script>
         <script type="text/javascript">
@@ -34,11 +39,9 @@
     </head>
     <body onload="initial();">
         <h1>授業を登録</h1>
-        <div>以下のデータを登録しますか？</div>
+        <div>以下のデータを登録しますか？</div><br>
         <div id="data"></div>
-        <form method="post" action="/add">
-        	<!-- type="hidden"のところで非表示データを送信する、nameでフォーム部品に名前をつける、valueで送信される値を指定する -->
-        	<!-- つまり、現時点、名前はつけたけど中身を入れてない！！そりゃnullになるわけだ！！ -->
+        <form method="post" action="/add"><br>
         	<input type="hidden"  name="id" id="id">
             <input type="hidden" name="className" id="className">
             <input type="hidden" name="teacher" id="teacher">
@@ -47,7 +50,7 @@
             <input type="hidden" name="period" id="period">
             <input type="hidden" name="credit" id="credit">
             <input type="hidden" name="explanation" id="explanation">
-            <input type="submit" value="登録">
+            <input type="submit" value="登録" style="width:100px; height:80px; font-size: 15pt;">
         </form>
     </body>
 </html>

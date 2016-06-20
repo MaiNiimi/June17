@@ -8,14 +8,21 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <style>
+                title{font-size: 30pt; font-synthesis:weight; color: magenta;}
+                h1{font-size: 20pt; font-synthesis: weight; color:magenta;}
+                body{background: ivory}
+            </style>
         <title>履修登録</title>
     </head>
     <body>
         <h1>メニュー</h1>
-        <ul>
-            <li><a href ="search">検索</a></li>
-            <li><a href ="timetable">時間割表示</a></li>
-            <!-- <li><a href ="Logout">ログアウト</a></li>-->
+        <ul>     
+            <li><a href ="search">授業を選択する</a></li>
+            <li><a href ="timetable.jsp">自分の登録した科目を見る</a></li>
         </ul>
+        <p><img src = 'http://4.bp.blogspot.com/-9BbIaubUxoI/VD3SXaU6tWI/AAAAAAAAoS8/nsifjIIQf8Y/s800/school_jikanwari_junbi.png' width = '300' height = '300' align = 'left' border = '0'></p>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <p><a href ="logout">ログアウトする</a></p>
     </body>
 </html>

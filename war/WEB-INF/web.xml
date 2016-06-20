@@ -5,26 +5,9 @@ xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	
-	
-	<servlet>
-		<servlet-name>Risyu_ms</servlet-name>
-		<servlet-class>risyu_ms.Risyu_msServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Risyu_ms</servlet-name>
-		<url-pattern>/risyu_ms</url-pattern>
-	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
-	<servlet>
-		<servlet-name>Users</servlet-name>
-		<servlet-class>risyu_ms.UsersServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Users</servlet-name>
-		<url-pattern>/users</url-pattern>
-	</servlet-mapping>
 	<servlet>
 		<servlet-name>PairCourse</servlet-name>
 		<servlet-class>risyu_ms.PairCourseServlet</servlet-class>
@@ -52,16 +35,25 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/add</url-pattern>
 	</servlet-mapping>
 	
+	<filter>
+    	<filter-name>logincheck</filter-name>
+   		<filter-class>risyu_ms.LoginCheckFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+    	<filter-name>logincheck</filter-name>
+   		<url-pattern>/main.jsp</url-pattern>
+	</filter-mapping>    
+     
 	<servlet>
-		<servlet-name>timetable</servlet-name>
-		<servlet-class>risyu_ms.TimetableServlet</servlet-class>
+    	<servlet-name>logout</servlet-name>
+    	<servlet-class>risyu_ms.LogoutServlet</servlet-class>
 	</servlet>
+
 	<servlet-mapping>
-		<servlet-name>timetable</servlet-name>
-		<url-pattern>/timetable</url-pattern>
+    	<servlet-name>logout</servlet-name>
+    	<url-pattern>/logout</url-pattern>
 	</servlet-mapping>
-
-
-
+	
 </web-app>
 
